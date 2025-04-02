@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadora completa com funções básicas, científicas e financeiras">
+    <meta name="keywords" content="calculadora, matemática, finanças, científica, online">
+    <title>Super Calculadora Universal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --secondary: #10b981;
+            --accent: #f59e0b;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+        .calculator-btn {
+            transition: all 0.2s ease;
+        }
+        .calculator-btn:hover {
+            transform: translateY(-2px);
+        }
+        .dark {
+            --primary: #60a5fa;
+            --secondary: #34d399;
+            --accent: #fbbf24;
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+    </style>
+</head>
+<body class="text-gray-800 dark:text-gray-200">
+    <div class="container mx-auto px-4 py-8">
+        <header class="flex justify-between items-center mb-8">
+            <h1 class="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-green-500">
+                <i class="fas fa-calculator mr-2"></i>Super Calculadora
+            </h1>
+            <button id="theme-toggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700">
+                <i class="fas fa-moon dark:hidden"></i>
+                <i class="fas fa-sun hidden dark:inline"></i>
+            </button>
+        </header>
+
+        <div class="max-w-md mx-auto bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden">
+            <!-- Calculator Display -->
+            <div class="p-4 bg-gray-50 dark:bg-gray-700">
+                <div id="history-display" class="text-right text-sm text-gray-500 dark:text-gray-400 h-5 mb-1"></div>
+                <input id="display" type="text" 
+                    class="w-full text-right text-3xl font-semibold bg-transparent outline-none" 
+                    readonly value="0">
+            </div>
+
+            <!-- Mode Selector -->
+            <div class="flex border-b border-gray-200 dark:border-gray-700">
+                <button class="mode-btn flex-1 py-2 font-medium bg-blue-100 dark:bg-blue-900" data-mode="basic">
+                    Básica
+                </button>
+                <button class="mode-btn flex-1 py-2 font-medium" data-mode="scientific">
+                    Científica
+                </button>
+                <button class="mode-btn flex-1 py-2 font-medium" data-mode="financial">
+                    Financeira
+                </button>
+            </div>
+
+            <!-- Calculator Buttons -->
+            <div class="grid grid-cols-4 gap-1 p-2" id="basic-buttons">
+                <!-- Basic buttons will be added here by JavaScript -->
+            </div>
+
+            <div class="grid grid-cols-5 gap-1 p-2 hidden" id="scientific-buttons">
+                <!-- Scientific buttons will be added here by JavaScript -->
+            </div>
+
+            <div class="grid grid-cols-4 gap-1 p-2 hidden" id="financial-buttons">
+                <!-- Financial buttons will be added here by JavaScript -->
+            </div>
+        </div>
+
+        <div class="mt-4 text-center text-sm text-gray-500 dark:text-gray-400">
+            <p>Calculadora universal com funções básicas, científicas e financeiras</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
